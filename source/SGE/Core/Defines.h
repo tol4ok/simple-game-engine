@@ -6,4 +6,6 @@
 	#else
 		#define SGE_API __declspec(dllimport)
 	#endif
+#else
+	#error "No suppurt for other platforms"
 #endif

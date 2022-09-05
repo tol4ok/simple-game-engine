@@ -56,11 +56,11 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SGE_PLATFORM_WINDOWS;SGE_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\dev\Dependecies\glfw-3.3.8.bin.WIN64\include;C:\dev\Dependecies\glm-0.9.9.8\glm;C:\dev\Dependecies\VulkanSDK\1.3.224.1\Include;$(SolutionDir)VulkanApplication\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\Dependecies\spdlog\include;$(SolutionDir)SimpleGameEngine\source\SGE;C:\dev\Dependecies\glfw-3.3.8.bin.WIN64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -71,13 +71,13 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SGE_PLATFORM_WINDOWS;SGE_BUILD_DLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\dev\Dependecies\glfw-3.3.8.bin.WIN64\include;C:\dev\Dependecies\glm-0.9.9.8\glm;C:\dev\Dependecies\VulkanSDK\1.3.224.1\Include;$(SolutionDir)VulkanApplication\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\Dependecies\spdlog\include;$(SolutionDir)SimpleGameEngine\source\SGE;C:\dev\Dependecies\glfw-3.3.8.bin.WIN64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -89,13 +89,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="source\SGE\Core\IWindow.h" />
+    <ClInclude Include="source\SGE\Core\Defines.h" />
+    <ClInclude Include="source\SGE\Core\KeyCodes.h" />
+    <ClInclude Include="source\SGE\Events\IEvent.h" />
+    <ClInclude Include="source\SGE\Events\KeyEvent.h" />
+    <ClInclude Include="source\SGE\Events\MouseEvent.h" />
+    <ClInclude Include="source\SGE\Core\Log.h" />
     <ClInclude Include="source\sge\Application.h" />
-    <ClInclude Include="source\sge\Core.h" />
-    <ClInclude Include="source\sge\EntryPoint.h" />
+    <ClInclude Include="source\SGE\Core\EntryPoint.h" />
+    <ClInclude Include="source\SGE\Events\WindowEvent.h" />
+    <ClInclude Include="source\SGE\Platform\Windows\WinWindow.h" />
     <ClInclude Include="source\SimpleGameEngine.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\SGE\Core\IWindow.cpp" />
+    <ClCompile Include="source\SGE\Core\Log.cpp" />
     <ClCompile Include="source\sge\Application.cpp" />
+    <ClCompile Include="source\SGE\Platform\Windows\WinWindow.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

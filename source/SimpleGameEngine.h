@@ -1,7 +1,8 @@
 #pragma once
 
-#include "sge/Application.h"
+#include "SGE/Core/Log.h"
+#include "SGE/Application.h"
 
 // --- main ---
-#include "sge/EntryPoint.h"
+#include "SGE/Core/EntryPoint.h"
 // --- ---- ---
