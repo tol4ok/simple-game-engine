@@ -43,9 +43,9 @@ namespace sge
 
 		if (!s_isGLFWinitialized)
 		{
-			int result = glfwInit();
+			int glfwStatus = glfwInit();
 
-			assert("Cant intialize GLFW!", result);
+			assert("Cant intialize GLFW!", glfwStatus);
 			SGE_CORE_INFO("GLFW initialized!");
 
 			s_isGLFWinitialized = true;
@@ -55,6 +55,9 @@ namespace sge
 		glfwMakeContextCurrent(m_window);
 		glfwSetWindowUserPointer(m_window, &m_Data);
 		setVSync(true);
+
+		int gladStatus = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		assert("Cant intialize GLAD!", gladStatus);
 
 		SGE_CORE_INFO("Initialized Windows Window \"{0}\" ( {1} {2} ) ", props.title, props.width, props.height);
 

@@ -1,9 +1,10 @@
 #pragma once
 
-#include "GLFW/glfw3.h"
-
 #include "Core/IWindow.h"
 #include "Core/Log.h"
+
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
 
 namespace sge
 {
