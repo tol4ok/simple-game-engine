@@ -1,8 +1,8 @@
 #include "WinWindow.h"
 
-#include "Events/KeyEvent.h"
-#include "Events/MouseEvent.h"
-#include "Events/WindowEvent.h"
+#include "SGE/Events/KeyEvent.h"
+#include "SGE/Events/MouseEvent.h"
+#include "SGE/Events/WindowEvent.h"
 
 namespace sge
 {

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Core/IWindow.h"
-#include "Core/Log.h"
+#include "SGE/Core/IWindow.h"
+#include "SGE/Core/Log.h"
 
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"

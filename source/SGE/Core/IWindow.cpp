@@ -1,7 +1,7 @@
 #include "IWindow.h"
 
 #ifdef SGE_PLATFORM_WINDOWS
-#include "Platform/Windows/WinWindow.h"
+#include "SGE/Platform/Windows/WinWindow.h"
 #endif
 
 namespace sge

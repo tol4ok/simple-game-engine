@@ -60,7 +60,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SGE_PLATFORM_WINDOWS;SGE_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)SimpleGameEngine\source\SGE;$(ProjectDir)vendor\glfw-3.3.8.bin.WIN64\include;$(ProjectDir)vendor\glad\include;$(ProjectDir)vendor\spdlog\include;$(ProjectDir)vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)SimpleGameEngine\source;$(ProjectDir)vendor\glfw-3.3.8.bin.WIN64\include;$(ProjectDir)vendor\glad\include;$(ProjectDir)vendor\spdlog\include;$(ProjectDir)vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -77,7 +77,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SGE_PLATFORM_WINDOWS;SGE_BUILD_DLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)SimpleGameEngine\source\SGE;$(ProjectDir)vendor\glfw-3.3.8.bin.WIN64\include;$(ProjectDir)vendor\glad\include;$(ProjectDir)vendor\spdlog\include;$(ProjectDir)vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)SimpleGameEngine\source;$(ProjectDir)vendor\glfw-3.3.8.bin.WIN64\include;$(ProjectDir)vendor\glad\include;$(ProjectDir)vendor\spdlog\include;$(ProjectDir)vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -92,6 +92,8 @@
     <ClInclude Include="source\SGE\Core\IWindow.h" />
     <ClInclude Include="source\SGE\Core\Defines.h" />
     <ClInclude Include="source\SGE\Core\KeyCodes.h" />
+    <ClInclude Include="source\SGE\Core\LayerStack.h" />
+    <ClInclude Include="source\SGE\Layers\ILayer.h" />
     <ClInclude Include="source\SGE\Events\IEvent.h" />
     <ClInclude Include="source\SGE\Events\KeyEvent.h" />
     <ClInclude Include="source\SGE\Events\MouseEvent.h" />
@@ -104,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\SGE\Core\IWindow.cpp" />
+    <ClCompile Include="source\SGE\Core\LayerStack.cpp" />
     <ClCompile Include="source\SGE\Core\Log.cpp" />
     <ClCompile Include="source\sge\Application.cpp" />
     <ClCompile Include="source\SGE\Platform\Windows\WinWindow.cpp" />

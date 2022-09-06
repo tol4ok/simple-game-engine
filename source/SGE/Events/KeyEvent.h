@@ -1,7 +1,7 @@
 #pragma once
 
 #include "IEvent.h"
-#include "Core/KeyCodes.h"
+#include "SGE/Core/KeyCodes.h"
 
 namespace sge
 {

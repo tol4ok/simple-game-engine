@@ -1,8 +1,9 @@
 #pragma once>
 
-#include "Core/Defines.h"
-#include "Platform/Windows/WinWindow.h"
-#include "Events/WindowEvent.h"
+#include "SGE/Core/Defines.h"
+#include "SGE/Platform/Windows/WinWindow.h"
+#include "SGE/Events/WindowEvent.h"
+#include "SGE/Core/LayerStack.h"
 
 namespace sge
 {
@@ -14,9 +15,17 @@ namespace sge
 		
 		void run();
 		void onEvent(IEvent& event);
+
+		void pushLayer(ILayer* layer);
+		void pushOverlay(ILayer* layer);
+
+		void popLayer(ILayer* layer);
+		void popOverlay(ILayer* layer);
 	private:
 		IWindow* m_window;
 		bool m_isRunning;
+
+		LayerStack m_layerStack;
 
 		bool OnWindowClose(WindowClosedEvent& event);
 	};

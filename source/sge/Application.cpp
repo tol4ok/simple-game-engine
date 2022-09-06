@@ -1,4 +1,4 @@
-#include "Application.h"
+#include "SGE/Application.h"
 
 namespace sge
 {
@@ -21,6 +21,11 @@ namespace sge
 		while (m_isRunning)
 		{
 			m_window->onUpdate();
+
+			for (auto it = m_layerStack.end(); it != m_layerStack.begin();)
+			{
+				(*--it)->onUpdate();
+			}
 		}
 	}
 
@@ -29,7 +34,32 @@ namespace sge
 		EventDispatcher dispatcher(event);
 		dispatcher.dispatch<WindowClosedEvent>(APP_BIND_EVENT_FUNCTION(OnWindowClose));
 
+		for (auto it = m_layerStack.end(); it != m_layerStack.begin();)
+		{
+			(*--it)->onEvent(event);
+		}
+
 		SGE_CORE_TRACE("{0}", event.toString());
+	}
+
+	void Application::pushLayer(ILayer* layer)
+	{
+		m_layerStack.push(layer);
+	}
+
+	void Application::pushOverlay(ILayer* layer)
+	{
+		m_layerStack.pushOver(layer);
+	}
+
+	void Application::popLayer(ILayer* layer)
+	{
+		m_layerStack.pop(layer);
+	}
+
+	void Application::popOverlay(ILayer* layer)
+	{
+		m_layerStack.popOver(layer);
 	}
 
 	bool Application::OnWindowClose(WindowClosedEvent& event)

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Core/Defines.h" 
-#include "Events/IEvent.h"
+#include "SGE/Core/Defines.h" 
+#include "SGE/Events/IEvent.h"
 
 #include <functional>
 
