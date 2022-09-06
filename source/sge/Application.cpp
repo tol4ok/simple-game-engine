@@ -13,7 +13,7 @@ namespace sge
 
 	Application::~Application()
 	{
-
+		delete m_window;
 	}
 
 	void Application::run()
