@@ -61,6 +61,9 @@
       <PreprocessorDefinitions>SGE_PLATFORM_WINDOWS;SGE_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)SimpleGameEngine\source;$(ProjectDir)vendor\glfw-3.3.8.bin.WIN64\include;$(ProjectDir)vendor\glad\include;$(ProjectDir)vendor\spdlog\include;$(ProjectDir)vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeaderFile>sgepch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -78,6 +81,9 @@
       <PreprocessorDefinitions>SGE_PLATFORM_WINDOWS;SGE_BUILD_DLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)SimpleGameEngine\source;$(ProjectDir)vendor\glfw-3.3.8.bin.WIN64\include;$(ProjectDir)vendor\glad\include;$(ProjectDir)vendor\spdlog\include;$(ProjectDir)vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeaderFile>sgepch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -89,6 +95,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="source\sgepch.h" />
+    <ClInclude Include="source\SGE\Core\Input.h" />
     <ClInclude Include="source\SGE\Core\IWindow.h" />
     <ClInclude Include="source\SGE\Core\Defines.h" />
     <ClInclude Include="source\SGE\Core\KeyCodes.h" />
@@ -105,6 +113,8 @@
     <ClInclude Include="source\SimpleGameEngine.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\sgepch.cpp" />
+    <ClCompile Include="source\SGE\Core\Input.cpp" />
     <ClCompile Include="source\SGE\Core\IWindow.cpp" />
     <ClCompile Include="source\SGE\Core\LayerStack.cpp" />
     <ClCompile Include="source\SGE\Core\Log.cpp" />

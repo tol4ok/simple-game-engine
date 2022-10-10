@@ -1,3 +1,5 @@
+#include "sgepch.h"
+
 #include "SGE/Core/LayerStack.h"
 
 namespace sge

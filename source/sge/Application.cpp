@@ -1,3 +1,5 @@
+#include "sgepch.h"
+
 #include "SGE/Application.h"
 
 namespace sge
@@ -21,6 +23,12 @@ namespace sge
 		while (m_isRunning)
 		{
 			m_window->onUpdate();
+
+			glBegin(GL_TRIANGLES);
+			glVertex2f(-0.5f,  0.5f);
+			glVertex2f( 0.5f,  0.5f);
+			glVertex2f(-0.5f, -0.5f);
+			glEnd();
 
 			for (auto it = m_layerStack.end(); it != m_layerStack.begin();)
 			{

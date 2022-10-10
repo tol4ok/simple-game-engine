@@ -1,9 +1,8 @@
 #pragma once
+#include "sgepch.h"
 
 #include "SGE/Core/Defines.h" 
 #include "SGE/Events/IEvent.h"
-
-#include <functional>
 
 namespace sge
 {

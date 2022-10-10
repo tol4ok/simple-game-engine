@@ -1,3 +1,5 @@
+#include "sgepch.h"
+
 #include "WinWindow.h"
 
 #include "SGE/Events/KeyEvent.h"

@@ -1,7 +1,7 @@
 #pragma once
+#include "sgepch.h"
 
 #include "Defines.h"
-
 #include "spdlog/spdlog.h"
 
 namespace sge

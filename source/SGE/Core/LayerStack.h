@@ -1,6 +1,5 @@
 #pragma once
-
-#include <vector>
+#include "sgepch.h"
 
 #include "SGE/Layers/ILayer.h"
 
